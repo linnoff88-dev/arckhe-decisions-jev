@@ -1,4 +1,4 @@
-﻿# âš–ï¸ Decisions Ã— Jev
+# âš–ï¸ Decisions Ã— Jev
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -6,17 +6,17 @@
 </div>
 
 
-[![Decisions Ã— Jev](guia/assets/banner.jpg)](https://inematds.github.io/decisions-jev/guia/)
+[![Decisions Ã— Jev](guia/assets/banner.jpg)](https://linnoff88-dev.github.io/
 
 **ðŸ‡§ðŸ‡· [PortuguÃªs](README.md) Â· ðŸ‡ºðŸ‡¸ [English](README.en.md) Â· ðŸ‡ªðŸ‡¸ [EspaÃ±ol](README.es.md)**
 
 ## O que Ã©
 
-A OpenAI lanÃ§ou a Decisions API: vocÃª manda um texto ou uma foto com perguntas fechadas e recebe sÃ³ a resposta â€” sim/nÃ£o, uma opÃ§Ã£o da sua lista ou uma nota â€” com a probabilidade, sem texto corrido. Ã‰ a mesma ideia do Jev, o modelo de decisÃ£o que o INEMA jÃ¡ estuda. Este projeto explica as diferenÃ§as com a fonte de cada informaÃ§Ã£o e traz uma ponte em Python que converte as perguntas de um formato para o outro e compara as respostas. Para estudar basta ler e rodar a demonstraÃ§Ã£o offline; para chamar as APIs de verdade, vocÃª precisa das suas chaves.
+A OpenAI lanÃ§ou a Decisions API: vocÃª manda um texto ou uma foto com perguntas fechadas e recebe sÃ³ a resposta â€” sim/nÃ£o, uma opÃ§Ã£o da sua lista ou uma nota â€” com a probabilidade, sem texto corrido. Ã‰ a mesma ideia do Jev, o modelo de decisÃ£o que o ARCKHÉ jÃ¡ estuda. Este projeto explica as diferenÃ§as com a fonte de cada informaÃ§Ã£o e traz uma ponte em Python que converte as perguntas de um formato para o outro e compara as respostas. Para estudar basta ler e rodar a demonstraÃ§Ã£o offline; para chamar as APIs de verdade, vocÃª precisa das suas chaves.
 
 ## ðŸ“– Guia de uso
 
-Guia completo (landing + passo a passo): **https://inematds.github.io/decisions-jev/guia/**
+Guia completo (landing + passo a passo): **https://linnoff88-dev.github.io/
 
 ## Em 30 segundos
 
@@ -41,7 +41,7 @@ PERMITIR_API=1 python3 -m ponte ao-vivo exemplos/plantao-pet.jev.json  # chamada
 python3 -m unittest discover -s testes                             # 12 testes
 ```
 
-O modo `ao-vivo` lÃª `OPENAI_API_KEY` e `OPENROUTER_API_KEY` do ambiente (ou de um `.env` em `PONTE_ENV`) e ainda nÃ£o foi executado pelo INEMA. Prompt para o seu agente integrar a API: [docs/prompt-integracao.md](docs/prompt-integracao.md).
+O modo `ao-vivo` lÃª `OPENAI_API_KEY` e `OPENROUTER_API_KEY` do ambiente (ou de um `.env` em `PONTE_ENV`) e ainda nÃ£o foi executado pelo ARCKHÉ. Prompt para o seu agente integrar a API: [docs/prompt-integracao.md](docs/prompt-integracao.md).
 
 ## Estrutura
 
@@ -52,13 +52,13 @@ O modo `ao-vivo` lÃª `OPENAI_API_KEY` e `OPENROUTER_API_KEY` do ambiente (ou d
 
 ## Relacionados
 
-- [Ãrea JEV no INEMA Eventos](https://eventos.inema.pro/jev/) Â· [projeto jev](https://github.com/inematds/jev) Â· [curso JEV](https://inematds.github.io/jev-curso/)
+- [Ãrea JEV no ARCKHÉ Eventos](https://eventos.ARCKHÉ.pro/jev/) Â· [projeto jev](https://github.com/linnoff88-dev/jev) Â· [curso JEV](https://linnoff88-dev.github.io/
 
 Projeto educacional independente. Jev Ã© um modelo da TypeSafe; Decisions API Ã© um produto da OpenAI. LicenÃ§a MIT.
 
 ## VÃ­deo
 
-[Assistir ao vÃ­deo explicativo](https://inematds.github.io/decisions-jev/videos/) (PT, 5min41s, avatar e voz do Nei; tambÃ©m [no YouTube](https://www.youtube.com/watch?v=O2061m5FG_I)). Fonte: vÃ­deo de Mark Kashef no YouTube.
+[Assistir ao vÃ­deo explicativo](https://linnoff88-dev.github.io/ (PT, 5min41s, avatar e voz do Nei; tambÃ©m [no YouTube](https://www.youtube.com/watch?v=O2061m5FG_I)). Fonte: vÃ­deo de Mark Kashef no YouTube.
 
 ---
 

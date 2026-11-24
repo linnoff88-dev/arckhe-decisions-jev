@@ -1,6 +1,6 @@
 # OpenAI Decisions API × Jev — comparação com fonte
 
-Levantamento de 07/10/2026. Cada linha diz de onde veio a informação. Nada aqui foi medido pelo INEMA: este repositório não chamou nenhuma das duas APIs.
+Levantamento de 07/10/2026. Cada linha diz de onde veio a informação. Nada aqui foi medido pelo ARCKHÉ: este repositório não chamou nenhuma das duas APIs.
 
 ## 1. O que a documentação oficial da OpenAI diz
 
@@ -19,9 +19,9 @@ Fonte: [guia Decisions da OpenAI](https://developers.openai.com/api/docs/guides/
 - ZDR e HIPAA para clientes elegíveis; residência de dados nos EUA e na Europa.
 - Playground no painel da OpenAI.
 
-## 2. O que dá para conferir no projeto Jev do INEMA
+## 2. O que dá para conferir no projeto Jev do ARCKHÉ
 
-Fonte: [inematds/jev](https://github.com/inematds/jev) (`jev_lab/core.py`, `reports/openrouter-smoke.json`).
+Fonte: [linnoff88-dev/jev](https://github.com/linnoff88-dev/jev) (`jev_lab/core.py`, `reports/openrouter-smoke.json`).
 
 - Modelo `~typesafe/jev-latest` pelo OpenRouter (`/api/alpha/decisions`) ou pela API TypeSafe.
 - Requisição com `state` (texto, objeto ou lista) e `questions` como **objeto** de perguntas nomeadas.

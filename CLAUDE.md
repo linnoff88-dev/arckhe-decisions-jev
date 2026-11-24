@@ -1,10 +1,10 @@
 # CLAUDE.md — decisions-jev
 
-Repo `inematds/decisions-jev` (autor `inematds <inematds@gmail.com>`). Guia em `guia/` (PT) + `guia/en/` + `guia/es/`, Pages servido da raiz.
+Repo `linnoff88-dev/decisions-jev` (autor `linnoff88-dev <linnoff88-dev@gmail.com>`). Guia em `guia/` (PT) + `guia/en/` + `guia/es/`, Pages servido da raiz.
 
 - Testes: `python3 -m unittest discover -s testes`. Demo: `python3 -m ponte demo`.
 - `ao-vivo` chama APIs pagas (OpenAI e OpenRouter): só rodar com autorização explícita do Nei para esse uso.
-- Toda afirmação em `docs/comparacao.md` diz a fonte: docs oficiais, repo jev ou vídeos (medição dos autores). Não apresentar número dos vídeos como medição do INEMA.
+- Toda afirmação em `docs/comparacao.md` diz a fonte: docs oficiais, repo jev ou vídeos (medição dos autores). Não apresentar número dos vídeos como medição do ARCKHÉ.
 
 ## Self-learning
 

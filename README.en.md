@@ -1,16 +1,16 @@
 # ⚖️ Decisions × Jev
 
-[![Decisions × Jev](guia/assets/banner-en.jpg)](https://inematds.github.io/decisions-jev/guia/en/)
+[![Decisions × Jev](guia/assets/banner-en.jpg)](https://linnoff88-dev.github.io/
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
 ## What it is
 
-OpenAI launched the Decisions API: you send a text or a photo with closed questions and get back only the answer — yes/no, one option from your list or a score — with its probability, no running text. It is the same idea as Jev, the decision model INEMA already studies. This project explains the differences with the source of each piece of information and ships a Python bridge that converts questions from one format to the other and compares the answers. To study, just read and run the offline demo; to call the real APIs, you need your own keys.
+OpenAI launched the Decisions API: you send a text or a photo with closed questions and get back only the answer — yes/no, one option from your list or a score — with its probability, no running text. It is the same idea as Jev, the decision model ARCKHÉ already studies. This project explains the differences with the source of each piece of information and ships a Python bridge that converts questions from one format to the other and compares the answers. To study, just read and run the offline demo; to call the real APIs, you need your own keys.
 
 ## 📖 User guide
 
-Full guide (landing + step by step): **https://inematds.github.io/decisions-jev/guia/en/**
+Full guide (landing + step by step): **https://linnoff88-dev.github.io/
 
 ## In 30 seconds
 
@@ -35,7 +35,7 @@ PERMITIR_API=1 python3 -m ponte ao-vivo exemplos/plantao-pet.jev.json  # paid ca
 python3 -m unittest discover -s testes                             # 12 tests
 ```
 
-The `ao-vivo` mode reads `OPENAI_API_KEY` and `OPENROUTER_API_KEY` from the environment (or from a `.env` in `PONTE_ENV`) and has not been run by INEMA yet. Prompt for your agent to integrate the API: [docs/prompt-integracao.md](docs/prompt-integracao.md) (in Portuguese).
+The `ao-vivo` mode reads `OPENAI_API_KEY` and `OPENROUTER_API_KEY` from the environment (or from a `.env` in `PONTE_ENV`) and has not been run by ARCKHÉ yet. Prompt for your agent to integrate the API: [docs/prompt-integracao.md](docs/prompt-integracao.md) (in Portuguese).
 
 ## Structure
 
@@ -46,6 +46,6 @@ The `ao-vivo` mode reads `OPENAI_API_KEY` and `OPENROUTER_API_KEY` from the envi
 
 ## Related
 
-- [JEV area at INEMA Eventos](https://eventos.inema.pro/jev/) · [jev project](https://github.com/inematds/jev) · [JEV course](https://inematds.github.io/jev-curso/)
+- [JEV area at ARCKHÉ Eventos](https://eventos.ARCKHÉ.pro/jev/) · [jev project](https://github.com/linnoff88-dev/jev) · [JEV course](https://linnoff88-dev.github.io/
 
 Independent educational project. Jev is a TypeSafe model; Decisions API is an OpenAI product. MIT license.
