@@ -1,5 +1,5 @@
 {
-  "caso": "Pergunta que a OpenAI recusa (o Jev sempre escolhe uma opção)",
+  "caso": "Pergunta que a OpenAI recusa (o Jev sempre escolhe uma opçêo)",
   "openai": {"answers": [
     {"type": "refusal", "name": "perfil"}
   ], "usage": {"input_tokens": 190}},

@@ -1,5 +1,5 @@
 {
-  "caso": "Plantão pet: gata que não consegue urinar",
+  "caso": "Plantêo pet: gata que nêo consegue urinar",
   "openai": {"answers": [
     {"type": "predicate", "name": "atender_hoje", "probability": 0.97},
     {"type": "choice", "name": "assunto", "choice": "emergencia",

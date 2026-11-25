@@ -3,7 +3,7 @@
   "input": [{
     "role": "user",
     "content": [
-      {"type": "input_text", "text": "Cliente pede devolução: 'o fone chegou com a haste quebrada'. Foto anexada."},
+      {"type": "input_text", "text": "Cliente pede devoluçêo: 'o fone chegou com a haste quebrada'. Foto anexada."},
       {"type": "input_image", "image_url": "data:image/png;base64,COLE_AQUI_A_IMAGEM"}
     ]
   }],
@@ -13,7 +13,7 @@
      "choices": [
        {"value": "danificado", "description": "Dano visível compatível com o relato."},
        {"value": "sem_dano", "description": "Produto íntegro na foto."},
-       {"value": "nao_avaliavel", "description": "Foto não mostra o produto (ex.: caixa fechada)."}
+       {"value": "nao_avaliavel", "description": "Foto nêo mostra o produto (ex.: caixa fechada)."}
      ]}
   ]
 }

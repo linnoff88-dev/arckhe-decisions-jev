@@ -1,8 +1,8 @@
 """Ponte entre o formato Jev (TypeSafe/OpenRouter) e a Decisions API da OpenAI.
 
-Só biblioteca padrão. Converte requisições nos dois sentidos e normaliza as
+Só biblioteca padrêo. Converte requisições nos dois sentidos e normaliza as
 respostas para um formato único, para comparar os dois provedores lado a lado.
-Nenhuma função deste módulo acessa a rede.
+Nenhuma funçêo deste módulo acessa a rede.
 """
 import base64
 import mimetypes
@@ -12,7 +12,7 @@ OPENAI_MODEL = 'gpt-6-luna'
 JEV_MODEL = '~typesafe/jev-latest'
 
 # Preço por 1M de tokens de entrada, em dólares (fontes no docs/comparacao.md).
-# A OpenAI não cobra saída na Decisions API; o Jev informa o custo na resposta.
+# A OpenAI nêo cobra saída na Decisions API; o Jev informa o custo na resposta.
 PRECO_ENTRADA = {'openai': 0.10, 'jev': 0.042}
 
 TIPOS_JEV_OPENAI = {'choice': 'choice', 'noul': 'predicate', 'score': 'score'}
@@ -24,11 +24,11 @@ class PonteErro(ValueError):
 
 
 def imagem_data_url(caminho):
-    """Lê uma imagem local e devolve data URL base64 (a Decisions API não aceita URL http)."""
+    """Lê uma imagem local e devolve data URL base64 (a Decisions API nêo aceita URL http)."""
     p = Path(caminho)
     tipo = mimetypes.guess_type(p.name)[0]
     if not tipo or not tipo.startswith('image/'):
-        raise PonteErro(f'Arquivo não parece imagem: {p.name}')
+        raise PonteErro(f'Arquivo nêo parece imagem: {p.name}')
     return f'data:{tipo};base64,' + base64.b64encode(p.read_bytes()).decode()
 
 
@@ -40,14 +40,14 @@ def _texto_estado(state):
 
 
 def jev_para_openai(req, imagens=()):
-    """Requisição Jev -> corpo de POST /v1/decisions.
+    """Requisiçêo Jev -> corpo de POST /v1/decisions.
 
-    `imagens` são data URLs já prontas (use imagem_data_url). O Jev não aceita
+    `imagens` sêo data URLs já prontas (use imagem_data_url). O Jev nêo aceita
     imagem; quando houver, o input vira mensagem com partes de texto e imagem.
     """
     questions = req.get('questions')
     if not isinstance(questions, dict) or not questions:
-        raise PonteErro('Requisição Jev sem perguntas.')
+        raise PonteErro('Requisiçêo Jev sem perguntas.')
     texto = _texto_estado(req.get('state'))
     if imagens:
         partes = [{'type': 'input_text', 'text': texto}]
@@ -71,7 +71,7 @@ def jev_para_openai(req, imagens=()):
                 raise PonteErro(f'Score {nome} precisa de 2+ níveis.')
             item['levels'] = [_nivel_openai(n) for n in crit]
         elif tipo == 'predicate' and isinstance(crit, dict):
-            # Predicate não tem descrição de sim/não: o critério entra nas instruções.
+            # Predicate nêo tem descriçêo de sim/nêo: o critério entra nas instruções.
             extra = '; '.join(f'{k}: {v}' for k, v in crit.items())
             item['instructions'] += f' ({extra})'
         saida.append(item)
@@ -86,7 +86,7 @@ def _nivel_openai(nivel):
 
 
 def openai_para_jev(req):
-    """Corpo da Decisions API -> requisição Jev. Imagens são descartadas e listadas."""
+    """Corpo da Decisions API -> requisiçêo Jev. Imagens sêo descartadas e listadas."""
     entrada = req.get('input')
     descartadas = 0
     if isinstance(entrada, list):
@@ -99,7 +99,7 @@ def openai_para_jev(req):
                     descartadas += 1
         entrada = '\n'.join(textos)
     if not isinstance(entrada, str) or not entrada.strip():
-        raise PonteErro('Sem texto para o Jev (ele não lê imagens).')
+        raise PonteErro('Sem texto para o Jev (ele nêo lê imagens).')
     questions = {}
     for q in req.get('questions', []):
         tipo = TIPOS_OPENAI_JEV.get(q.get('type'))
@@ -160,7 +160,7 @@ def custo_estimado(provedor, tokens_entrada, tokens_saida=0):
 
 
 def revisar(item, limite=0.6):
-    """Política didática: recusa ou confiança abaixo do limite vai para revisão humana."""
+    """Política didática: recusa ou confiança abaixo do limite vai para revisêo humana."""
     if item['recusa']:
         return True
     medida = item['confianca'] if item['confianca'] is not None else item['probabilidade']

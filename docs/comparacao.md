@@ -1,20 +1,20 @@
-# OpenAI Decisions API × Jev — comparação com fonte
+# OpenAI Decisions API × Jev — comparaçêo com fonte
 
-Levantamento de 07/10/2026. Cada linha diz de onde veio a informação. Nada aqui foi medido pelo ARCKHÉ: este repositório não chamou nenhuma das duas APIs.
+Levantamento de 07/10/2026. Cada linha diz de onde veio a informaçêo. Nada aqui foi medido pelo ARCKHÉ: este repositório nêo chamou nenhuma das duas APIs.
 
-## 1. O que a documentação oficial da OpenAI diz
+## 1. O que a documentaçêo oficial da OpenAI diz
 
-Fonte: [guia Decisions da OpenAI](https://developers.openai.com/api/docs/guides/decisions) (versão em Markdown: acrescente `.md` à URL).
+Fonte: [guia Decisions da OpenAI](https://developers.openai.com/api/docs/guides/decisions) (versêo em Markdown: acrescente `.md` à URL).
 
-- Endpoint próprio: `POST /v1/decisions`. Não é o Responses API nem chat.
-- Situação: **beta pública**, com GA prevista "nas próximas semanas". (A data de lançamento, 06/10/2026, vem da cobertura do lançamento, não do guia.)
+- Endpoint próprio: `POST /v1/decisions`. Nêo é o Responses API nem chat.
+- Situaçêo: **beta pública**, com GA prevista "nas próximas semanas". (A data de lançamento, 06/10/2026, vem da cobertura do lançamento, nêo do guia.)
 - Modelo: `gpt-6-luna` é o único disponível.
-- Entrada: texto, imagem ou os dois. Imagem **só como data URL base64** (URL http/https e `file_id` não são aceitos).
-- Três tipos de pergunta, que podem ir juntas na mesma requisição:
-  - `predicate` — probabilidade de 0 a 1 de uma condição ser verdadeira.
-  - `choice` — escolhe um `value` da lista `choices`, com distribuição de probabilidades e campo `confidence`.
+- Entrada: texto, imagem ou os dois. Imagem **só como data URL base64** (URL http/https e `file_id` nêo sêo aceitos).
+- Três tipos de pergunta, que podem ir juntas na mesma requisiçêo:
+  - `predicate` — probabilidade de 0 a 1 de uma condiçêo ser verdadeira.
+  - `choice` — escolhe um `value` da lista `choices`, com distribuiçêo de probabilidades e campo `confidence`.
   - `score` — `levels` ordenados (índice começa em 0); devolve média ponderada, que pode cair entre níveis (ex.: 1,1), com `confidence`.
-- Resposta: lista `answers`; cada item repete o `name` da pergunta. Uma pergunta pode voltar como `type: "refusal"` — recusa explícita, não um "falso" disfarçado.
+- Resposta: lista `answers`; cada item repete o `name` da pergunta. Uma pergunta pode voltar como `type: "refusal"` — recusa explícita, nêo um "falso" disfarçado.
 - Preço: **US$ 0,10 por 1M de tokens de entrada**; sem cobrança de saída nem de cache. Há adicionais de processamento regional e de contexto longo.
 - ZDR e HIPAA para clientes elegíveis; residência de dados nos EUA e na Europa.
 - Playground no painel da OpenAI.
@@ -24,32 +24,32 @@ Fonte: [guia Decisions da OpenAI](https://developers.openai.com/api/docs/guides/
 Fonte: [linnoff88-dev/jev](https://github.com/linnoff88-dev/jev) (`jev_lab/core.py`, `reports/openrouter-smoke.json`).
 
 - Modelo `~typesafe/jev-latest` pelo OpenRouter (`/api/alpha/decisions`) ou pela API TypeSafe.
-- Requisição com `state` (texto, objeto ou lista) e `questions` como **objeto** de perguntas nomeadas.
-- Tipos: `choice`, `noul` (sim/não) e `score`; alternativas e níveis em `criteria`.
-- Só texto: não aceita imagem.
+- Requisiçêo com `state` (texto, objeto ou lista) e `questions` como **objeto** de perguntas nomeadas.
+- Tipos: `choice`, `noul` (sim/nêo) e `score`; alternativas e níveis em `criteria`.
+- Só texto: nêo aceita imagem.
 - Preço usado no laboratório: US$ 0,042 por 1M de tokens de entrada. Diferente da OpenAI, a resposta do Jev traz `output_tokens` e o `cost` cobrado.
-- O formato de resposta usado no `jev_lab` não tem tipo de recusa. Que o Jev "sempre responde dentro das opções" é observação do autor do vídeo 1; por isso vale incluir uma opção `insuficiente`.
+- O formato de resposta usado no `jev_lab` nêo tem tipo de recusa. Que o Jev "sempre responde dentro das opções" é observaçêo do autor do vídeo 1; por isso vale incluir uma opçêo `insuficiente`.
 
 ## 2b. Microsoft-Decision-1 (lançado em 09/10/2026)
 
-Fontes: anúncio da Microsoft (Achint Srivastava, escritório do CTO) e post de Satya Nadella em 09/10/2026, resumidos pela [TestingCatalog](https://www.testingcatalog.com/microsoft-launches-decision-1-model-in-foundry/) e pela [RuntimeWire](https://runtimewire.com/article/microsoft-decision-1-achint-srivastava-agent-workflows). Levantamento de 11/10/2026; não chamamos este modelo.
+Fontes: anúncio da Microsoft (Achint Srivastava, escritório do CTO) e post de Satya Nadella em 09/10/2026, resumidos pela [TestingCatalog](https://www.testingcatalog.com/microsoft-launches-decision-1-model-in-foundry/) e pela [RuntimeWire](https://runtimewire.com/article/microsoft-decision-1-achint-srivastava-agent-workflows). Levantamento de 11/10/2026; nêo chamamos este modelo.
 
 - Mesma categoria do Jev e da Decisions API: recebe um conjunto fixo de opções e devolve uma probabilidade calibrada para cada uma, numa passada só. A Microsoft chama de "decision models".
-- Tipos: sim/não, múltipla escolha e nota; também avalia respostas de IA e ações de agentes contra uma rubrica. Os nomes dos campos da API não aparecem nas fontes acima.
-- Entrada: **só texto**, até 32.768 tokens. Não gera explicação, não responde perguntas abertas, não lê imagem, áudio nem vídeo (ficha no Foundry).
-- Recusa: as fontes não dizem se existe um tipo de resposta de recusa. Nos testes de segurança (5.250 pedidos, 11 benchmarks) ele recusou os pedidos nocivos.
+- Tipos: sim/nêo, múltipla escolha e nota; também avalia respostas de IA e ações de agentes contra uma rubrica. Os nomes dos campos da API nêo aparecem nas fontes acima.
+- Entrada: **só texto**, até 32.768 tokens. Nêo gera explicaçêo, nêo responde perguntas abertas, nêo lê imagem, áudio nem vídeo (ficha no Foundry).
+- Recusa: as fontes nêo dizem se existe um tipo de resposta de recusa. Nos testes de segurança (5.250 pedidos, 11 benchmarks) ele recusou os pedidos nocivos.
 - Base: Qwen3.5-9B (Alibaba) pós-treinado pela Microsoft; plano de trocar a base por modelos da própria Microsoft (MAI) e da OpenAI.
 - Preço: **US$ 0,042 por 1M de tokens de entrada** (igual ao Jev), saída grátis.
 - Onde: Microsoft Foundry; OpenRouter anunciado como "em breve", sem data.
-- Números da própria Microsoft (não independentes): maior acerto em 36 benchmarks com ~150 mil perguntas fora do treino; 35× mais rápido que o GPT-6 Sol na latência P50; decisão mudou em 1,3% dos pedidos reescritos de 8 formas. A Microsoft cita o JevBench e publicou depois os números de acerto e calibração do Jev 2.
+- Números da própria Microsoft (nêo independentes): maior acerto em 36 benchmarks com ~150 mil perguntas fora do treino; 35× mais rápido que o GPT-6 Sol na latência P50; decisêo mudou em 1,3% dos pedidos reescritos de 8 formas. A Microsoft cita o JevBench e publicou depois os números de acerto e calibraçêo do Jev 2.
 
 | | OpenAI Decisions API | Jev | Microsoft-Decision-1 |
 |---|---|---|---|
-| Sim/não | `predicate` | `noul` | sim/não |
-| Opção da lista | `choice` + `choices` | `choice` + `criteria` | múltipla escolha |
+| Sim/nêo | `predicate` | `noul` | sim/nêo |
+| Opçêo da lista | `choice` + `choices` | `choice` + `criteria` | múltipla escolha |
 | Nota | `score` + `levels` | `score` + `criteria` | nota e rubrica |
-| Imagem | sim (base64) | não | não (só texto, até 32.768 tokens) |
-| Recusa | `refusal` | não existe | não informado |
+| Imagem | sim (base64) | nêo | nêo (só texto, até 32.768 tokens) |
+| Recusa | `refusal` | nêo existe | nêo informado |
 | Preço de entrada | US$ 0,10 / 1M | US$ 0,042 / 1M | US$ 0,042 / 1M (saída grátis) |
 | Onde | API OpenAI | OpenRouter, TypeSafe | Microsoft Foundry (OpenRouter em breve) |
 
@@ -57,20 +57,20 @@ A ponte deste repositório ainda converte só entre Jev e OpenAI.
 
 ## 3. Mapa de equivalência (o que a ponte faz)
 
-| Jev | Decisions API | Observação |
+| Jev | Decisions API | Observaçêo |
 |---|---|---|
 | `state` | `input` | Objeto/lista do Jev vira texto JSON. |
 | `questions` (objeto) | `questions` (lista com `name`) | O nome da chave vira `name`. |
 | `noul` | `predicate` | Descrições `true`/`false` do Jev entram nas instruções. |
-| `choice` + `criteria` {valor: descrição} | `choice` + `choices` [{value, description}] | — |
+| `choice` + `criteria` {valor: descriçêo} | `choice` + `choices` [{value, description}] | — |
 | `score` + `criteria` [níveis] | `score` + `levels` [{label, description}] | Índices a partir de 0 nos dois. |
 | `probabilities` {valor: p} | `probabilities` [{value, probability}] | A ponte normaliza para o mesmo formato. |
-| — | `refusal` | Sem equivalente no Jev. Tratar como revisão humana. |
-| — | `input_image` | O Jev não lê imagem; a ponte descarta e avisa. |
+| — | `refusal` | Sem equivalente no Jev. Tratar como revisêo humana. |
+| — | `input_image` | O Jev nêo lê imagem; a ponte descarta e avisa. |
 
-## 4. Números que apareceram nos vídeos (medições dos autores, não nossas)
+## 4. Números que apareceram nos vídeos (medições dos autores, nêo nossas)
 
-Fontes: [vídeo 1, "OpenAI's Decisions API just dropped. Here's how it compares to Jev"](https://www.youtube.com/watch?v=uTU5Ihgl_7Q), assistido em transcrição bengali, e um segundo vídeo em espanhol, com integração num sistema de triagem de clínica veterinária. O segundo chegou só como transcrição, sem link; não identificamos o canal.
+Fontes: [vídeo 1, "OpenAI's Decisions API just dropped. Here's how it compares to Jev"](https://www.youtube.com/watch?v=uTU5Ihgl_7Q), assistido em transcriçêo bengali, e um segundo vídeo em espanhol, com integraçêo num sistema de triagem de clínica veterinária. O segundo chegou só como transcriçêo, sem link; nêo identificamos o canal.
 
 | Item | Relato | Fonte |
 |---|---|---|
@@ -78,19 +78,19 @@ Fontes: [vídeo 1, "OpenAI's Decisions API just dropped. Here's how it compares 
 | Latência média | OpenAI 146 ms × Jev 155 ms em perguntas de checagem de relatório | vídeo 1 |
 | Latência mediana | levemente melhor no Jev | vídeo 1 |
 | Incidentes (mais complexo) | 181 × 143 ms, diferença a favor da OpenAI; custo do Jev ≈ metade | vídeo 1 |
-| Precisão | empate nos testes do autor (perguntas fáceis, 100% de acordo) | vídeo 1 |
+| Precisêo | empate nos testes do autor (perguntas fáceis, 100% de acordo) | vídeo 1 |
 | Latência observada | ~300 ms numa chamada, o dobro dos ~150 ms anunciados; outras perto do anunciado | vídeo 2 |
 | Imagem | foto com e sem dano e caixa fechada classificadas corretamente; foto custa um pouco mais de tokens | vídeos 1 e 2 |
 | Saúde | em triagem veterinária o modelo foi "cauteloso", marcando urgência com folga | vídeo 2 |
 
-São testes pequenos, feitos pelos autores, com perguntas fáceis. Servem de indício, não de benchmark.
+Sêo testes pequenos, feitos pelos autores, com perguntas fáceis. Servem de indício, nêo de benchmark.
 
 ## 5. Quando usar cada um (resumo prático)
 
-- **Tem imagem** (foto de produto, de ferimento, print) → Decisions API. O Jev ainda não lê imagem.
+- **Tem imagem** (foto de produto, de ferimento, print) → Decisions API. O Jev ainda nêo lê imagem.
 - **Muito volume, só texto** → o Jev custa menos por token de entrada; em milhões de registros a diferença pesa.
-- **Precisa de recusa explícita** em temas sensíveis → Decisions API devolve `refusal`. No Jev, crie a opção `insuficiente`.
+- **Precisa de recusa explícita** em temas sensíveis → Decisions API devolve `refusal`. No Jev, crie a opçêo `insuficiente`.
 - **Latência** → nas medições dos vídeos, a diferença fica na casa de dezenas de ms; para uma pessoa esperando, é imperceptível.
 - **Os dois** → formule as perguntas uma vez (formato Jev ou OpenAI), converta com a ponte e compare no seu próprio conjunto antes de escolher.
 
-Em ambos: confiança baixa (ex.: < 0,6) ou recusa → revisão humana. A decisão do modelo não executa nada sozinha; o seu sistema continua responsável pela ação.
+Em ambos: confiança baixa (ex.: < 0,6) ou recusa → revisêo humana. A decisêo do modelo nêo executa nada sozinha; o seu sistema continua responsável pela açêo.

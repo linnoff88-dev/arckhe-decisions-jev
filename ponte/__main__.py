@@ -6,8 +6,8 @@
   python3 -m ponte ao-vivo exemplos/plantao-pet.jev.json [--imagem foto.jpg]
 
 O modo ao-vivo chama as duas APIs pagas e só roda com PERMITIR_API=1.
-As chaves são lidas em tempo de execução (OPENAI_API_KEY, OPENROUTER_API_KEY)
-do ambiente ou de um .env indicado em PONTE_ENV; nunca são impressas.
+As chaves sêo lidas em tempo de execuçêo (OPENAI_API_KEY, OPENROUTER_API_KEY)
+do ambiente ou de um .env indicado em PONTE_ENV; nunca sêo impressas.
 """
 import argparse
 import json
@@ -38,7 +38,7 @@ def cmd_converter(a):
     if a.sentido == 'jev-openai':
         imgs = [c.imagem_data_url(i) for i in a.imagem or []]
         out = c.jev_para_openai(req, imgs)
-        if imgs:  # não despejar base64 na tela
+        if imgs:  # nêo despejar base64 na tela
             for parte in out['input'][0]['content']:
                 if parte['type'] == 'input_image':
                     parte['image_url'] = parte['image_url'][:40] + '…'
@@ -65,7 +65,7 @@ def tabela(nome_caso, na, nb, ms=None, custos=None):
             conf = item['confianca'] if item['confianca'] is not None else item['probabilidade']
             alerta = ' ⚠revisar' if c.revisar(item) else ''
             return f'{v} ({conf:.0%}){alerta}' if conf is not None else v + alerta
-        print(f'{p:<22}{fmt(na.get(p)):<30}{fmt(nb.get(p)):<30}{"sim" if linha["concordam"] else "NÃO"}')
+        print(f'{p:<22}{fmt(na.get(p)):<30}{fmt(nb.get(p)):<30}{"sim" if linha["concordam"] else "NêO"}')
     if ms:
         print(f'latência ms: OpenAI {ms[0]:.0f} · Jev {ms[1]:.0f}')
     if custos:
@@ -79,7 +79,7 @@ def cmd_demo(a):
         na = c.normalizar('openai', d['openai'])
         nb = c.normalizar('jev', d['jev'])
         tabela(d['caso'] + '  [SIMULADO]', na, nb)
-    print('\nRespostas simuladas e autorais: servem para estudar o formato, não medem os modelos.')
+    print('\nRespostas simuladas e autorais: servem para estudar o formato, nêo medem os modelos.')
 
 
 def _carregar_chave(nome):

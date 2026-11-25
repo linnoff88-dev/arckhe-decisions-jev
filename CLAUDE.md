@@ -3,8 +3,8 @@
 Repo `linnoff88-dev/decisions-jev` (autor `linnoff88-dev <linnoff88-dev@gmail.com>`). Guia em `guia/` (PT) + `guia/en/` + `guia/es/`, Pages servido da raiz.
 
 - Testes: `python3 -m unittest discover -s testes`. Demo: `python3 -m ponte demo`.
-- `ao-vivo` chama APIs pagas (OpenAI e OpenRouter): só rodar com autorização explícita do Nei para esse uso.
-- Toda afirmação em `docs/comparacao.md` diz a fonte: docs oficiais, repo jev ou vídeos (medição dos autores). Não apresentar número dos vídeos como medição do ARCKHÉ.
+- `ao-vivo` chama APIs pagas (OpenAI e OpenRouter): só rodar com autorizaçêo explícita do Nei para esse uso.
+- Toda afirmaçêo em `docs/comparacao.md` diz a fonte: docs oficiais, repo jev ou vídeos (mediçêo dos autores). Nêo apresentar número dos vídeos como mediçêo do ARCKHÉ.
 
 ## Self-learning
 

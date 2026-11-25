@@ -1,6 +1,6 @@
 {
   "model": "~typesafe/jev-latest",
-  "state": "Tutora: Marina. Pet: Bolota, gata, 4 anos. Mensagem: desde ontem ela vai à caixinha várias vezes, faz força e quase não sai xixi. Está miando diferente.",
+  "state": "Tutora: Marina. Pet: Bolota, gata, 4 anos. Mensagem: desde ontem ela vai à caixinha várias vezes, faz força e quase nêo sai xixi. Está miando diferente.",
   "questions": {
     "atender_hoje": {
       "type": "noul",
@@ -14,7 +14,7 @@
         "emergencia": "Sintoma agudo, dor, trauma ou risco imediato.",
         "consulta": "Sintoma leve ou acompanhamento.",
         "rotina": "Vacina, check-up, preço, agenda.",
-        "outro": "Elogio, reclamação ou fora das categorias."
+        "outro": "Elogio, reclamaçêo ou fora das categorias."
       }
     },
     "gravidade": {
@@ -23,7 +23,7 @@
       "criteria": [
         {"label": "baixa", "description": "Sem sinal de dor ou risco."},
         {"label": "moderada", "description": "Sintoma que merece consulta em dias."},
-        {"label": "alta", "description": "Sinal de dor, obstrução ou piora rápida."}
+        {"label": "alta", "description": "Sinal de dor, obstruçêo ou piora rápida."}
       ]
     }
   }

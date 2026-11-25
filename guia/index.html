@@ -114,7 +114,7 @@ table.cmp{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 18px}t
   </span>
   <div class="links">
     <a class="sec" href="#oque">O que é</a>
-    <a class="sec" href="#comparacao">Comparação</a>
+    <a class="sec" href="#comparacao">Comparaçêo</a>
     <a class="sec" href="#guia">Guia de uso</a>
     <a class="sec" href="#escolher">Qual usar</a>
     <a class="sec" href="#roadmap">Roadmap</a>
@@ -129,7 +129,7 @@ table.cmp{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 18px}t
   <div class="wrap">
     <div>
       <span class="chip">Novo · OpenAI Decisions API (beta pública, 06/10/2026)</span>
-      <h1>A OpenAI entrou na IA de decisão. <span class="amb">Compare com o Jev.</span></h1>
+      <h1>A OpenAI entrou na IA de decisêo. <span class="amb">Compare com o Jev.</span></h1>
       <p class="lead">Mesma pergunta, dois motores. Veja o que muda em tipos de pergunta, imagem, recusa, preço e latência — e converta suas requisições de um formato para o outro sem reescrever nada.</p>
       <div class="cta">
         <a class="btn" href="#guia">Começar o guia</a>
@@ -143,52 +143,52 @@ table.cmp{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 18px}t
 
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">Em resumo</span>
-  <p>A OpenAI lançou a Decisions API: você manda um texto ou uma foto com perguntas fechadas e recebe só a resposta — sim/não, uma opção da sua lista ou uma nota — com a probabilidade, sem texto corrido. É a mesma ideia do Jev, o modelo de decisão que o ARCKHÉ já estuda. Este projeto explica as diferenças com a fonte de cada informação e traz uma ponte em Python que converte as perguntas de um formato para o outro e compara as respostas. Para estudar basta ler e rodar a demonstração offline; para chamar as APIs de verdade, você precisa das suas chaves.</p>
+  <p>A OpenAI lançou a Decisions API: você manda um texto ou uma foto com perguntas fechadas e recebe só a resposta — sim/nêo, uma opçêo da sua lista ou uma nota — com a probabilidade, sem texto corrido. É a mesma ideia do Jev, o modelo de decisêo que o ARCKHÉ já estuda. Este projeto explica as diferenças com a fonte de cada informaçêo e traz uma ponte em Python que converte as perguntas de um formato para o outro e compara as respostas. Para estudar basta ler e rodar a demonstraçêo offline; para chamar as APIs de verdade, você precisa das suas chaves.</p>
 </div></section>
 
 <section id="oque"><div class="wrap">
   <span class="chip">O que é</span>
-  <h2>Decisão, não conversa</h2>
-  <p class="sub">Um modelo de decisão não escreve: escolhe. Seu sistema faz a pergunta, define as opções válidas e recebe uma resposta pronta para usar em código — e uma probabilidade para saber quando chamar uma pessoa.</p>
-  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Os seis pontos da comparação: predicate/noul, choice, score, imagem, recusa e ponte offline" loading="lazy" style="width:100%;display:block"></figure>
+  <h2>Decisêo, nêo conversa</h2>
+  <p class="sub">Um modelo de decisêo nêo escreve: escolhe. Seu sistema faz a pergunta, define as opções válidas e recebe uma resposta pronta para usar em código — e uma probabilidade para saber quando chamar uma pessoa.</p>
+  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Os seis pontos da comparaçêo: predicate/noul, choice, score, imagem, recusa e ponte offline" loading="lazy" style="width:100%;display:block"></figure>
   <div class="grid g3">
-    <div class="card"><h3>📚 Comparação com fonte</h3><p>Cada linha diz de onde veio: documentação oficial da OpenAI, o código do projeto Jev ou o que os autores de dois vídeos mediram. Nada é apresentado como medição nossa.</p></div>
-    <div class="card"><h3>🔁 Ponte Jev ↔ OpenAI</h3><p>Converte a requisição de um formato para o outro (noul ↔ predicate, criteria ↔ choices/levels) e normaliza as duas respostas num formato só.</p></div>
-    <div class="card"><h3>🧪 Demo offline e testes</h3><p>Três casos fictícios com respostas simuladas rodam sem chave nem custo; 12 testes garantem a conversão. O modo ao vivo só roda quando você autoriza.</p></div>
+    <div class="card"><h3>📚 Comparaçêo com fonte</h3><p>Cada linha diz de onde veio: documentaçêo oficial da OpenAI, o código do projeto Jev ou o que os autores de dois vídeos mediram. Nada é apresentado como mediçêo nossa.</p></div>
+    <div class="card"><h3>🔁 Ponte Jev ↔ OpenAI</h3><p>Converte a requisiçêo de um formato para o outro (noul ↔ predicate, criteria ↔ choices/levels) e normaliza as duas respostas num formato só.</p></div>
+    <div class="card"><h3>🧪 Demo offline e testes</h3><p>Três casos fictícios com respostas simuladas rodam sem chave nem custo; 12 testes garantem a conversêo. O modo ao vivo só roda quando você autoriza.</p></div>
   </div>
 </div></section>
 
 <section id="comparacao"><div class="wrap">
-  <span class="chip">Comparação</span>
+  <span class="chip">Comparaçêo</span>
   <h2>O que é igual e o que muda</h2>
-  <p class="sub">Os dois respondem às mesmas três formas de perguntar. As diferenças estão na entrada, na recusa e no preço.</p>
+  <p class="sub">Os dois respondem às mesmas três formas de perguntar. As diferenças estêo na entrada, na recusa e no preço.</p>
   <div class="tbl"><table class="cmp">
     <tr><th></th><th>OpenAI Decisions API</th><th>Jev (TypeSafe)</th><th>Microsoft-Decision-1</th></tr>
-    <tr><td>Sim ou não</td><td><code>predicate</code> → probabilidade de 0 a 1</td><td><code>noul</code> → probabilidade de 0 a 1</td><td>sim/não → probabilidade calibrada</td></tr>
-    <tr><td>Uma opção da lista</td><td><code>choice</code> + <code>choices</code>, com <code>confidence</code></td><td><code>choice</code> + <code>criteria</code>, com <code>confidence</code></td><td>múltipla escolha → probabilidade de cada opção</td></tr>
+    <tr><td>Sim ou nêo</td><td><code>predicate</code> → probabilidade de 0 a 1</td><td><code>noul</code> → probabilidade de 0 a 1</td><td>sim/nêo → probabilidade calibrada</td></tr>
+    <tr><td>Uma opçêo da lista</td><td><code>choice</code> + <code>choices</code>, com <code>confidence</code></td><td><code>choice</code> + <code>criteria</code>, com <code>confidence</code></td><td>múltipla escolha → probabilidade de cada opçêo</td></tr>
     <tr><td>Nota numa escala</td><td><code>score</code> + <code>levels</code> (índice a partir de 0)</td><td><code>score</code> + <code>criteria</code> em lista</td><td>nota e rubrica (avalia respostas e ações de agentes)</td></tr>
     <tr><td>Entrada</td><td>Texto <b>e imagem</b> (só base64)</td><td>Só texto</td><td>Só texto (até 32.768 tokens)</td></tr>
-    <tr><td>Recusa</td><td>Pode responder <code>refusal</code></td><td>Sempre escolhe entre as opções</td><td>Não informado</td></tr>
+    <tr><td>Recusa</td><td>Pode responder <code>refusal</code></td><td>Sempre escolhe entre as opções</td><td>Nêo informado</td></tr>
     <tr><td>Modelo</td><td><code>gpt-6-luna</code> (único)</td><td><code>~typesafe/jev-latest</code></td><td>Qwen3.5-9B pós-treinado pela Microsoft</td></tr>
     <tr><td>Preço (entrada)</td><td>US$ 0,10 por 1M tokens, sem cobrança de saída</td><td>US$ 0,042 por 1M tokens</td><td>US$ 0,042 por 1M tokens, saída grátis</td></tr>
-    <tr><td>Situação</td><td>Beta pública desde 06/10/2026</td><td>Disponível, sem lista de espera</td><td>Microsoft Foundry desde 09/10/2026; OpenRouter "em breve"</td></tr>
+    <tr><td>Situaçêo</td><td>Beta pública desde 06/10/2026</td><td>Disponível, sem lista de espera</td><td>Microsoft Foundry desde 09/10/2026; OpenRouter "em breve"</td></tr>
   </table></div>
   <p class="src">Fontes: guia oficial da OpenAI (developers.openai.com/api/docs/guides/decisions), o projeto linnoff88-dev/jev e o anúncio do Microsoft-Decision-1 (09/10/2026, Microsoft Foundry). Detalhes em <a href="https://github.com/linnoff88-dev/decisions-jev/blob/main/docs/comparacao.md">docs/comparacao.md</a>.</p>
 
   <h3 style="margin-top:28px">O que os vídeos mediram</h3>
-  <p>Dois criadores testaram as APIs logo no lançamento. Os números abaixo são <b>deles</b>, com poucas perguntas e fáceis — servem de indício, não de benchmark.</p>
+  <p>Dois criadores testaram as APIs logo no lançamento. Os números abaixo sêo <b>deles</b>, com poucas perguntas e fáceis — servem de indício, nêo de benchmark.</p>
   <div class="grid g3">
     <div class="card"><h3>💰 Preço</h3><p>O Jev saiu cerca de 58% mais barato por token de entrada; no teste de incidentes, o custo total ficou perto da metade.</p></div>
-    <div class="card"><h3>⏱️ Latência</h3><p>Média de 146 ms (OpenAI) contra 155 ms (Jev); a mediana ficou levemente melhor no Jev. Num teste de integração, uma chamada levou ~300 ms, o dobro do anunciado.</p></div>
+    <div class="card"><h3>⏱️ Latência</h3><p>Média de 146 ms (OpenAI) contra 155 ms (Jev); a mediana ficou levemente melhor no Jev. Num teste de integraçêo, uma chamada levou ~300 ms, o dobro do anunciado.</p></div>
     <div class="card"><h3>🎯 Acerto</h3><p>Empate: os dois acertaram tudo nos testes dos autores. Com fotos, a OpenAI separou produto danificado, intacto e caixa fechada.</p></div>
   </div>
-  <p class="src">Fontes: <a href="https://www.youtube.com/watch?v=uTU5Ihgl_7Q">vídeo "OpenAI's Decisions API just dropped. Here's how it compares to Jev"</a> e um segundo vídeo, em espanhol, que integrou a API numa triagem de clínica veterinária (recebido só como transcrição).</p>
+  <p class="src">Fontes: <a href="https://www.youtube.com/watch?v=uTU5Ihgl_7Q">vídeo "OpenAI's Decisions API just dropped. Here's how it compares to Jev"</a> e um segundo vídeo, em espanhol, que integrou a API numa triagem de clínica veterinária (recebido só como transcriçêo).</p>
 </div></section>
 
 <section id="fluxo"><div class="wrap">
   <span class="chip">Como funciona</span>
   <h2>Formule uma vez, rode nos dois</h2>
-  <p class="sub">A ponte traduz as perguntas, chama cada provedor no formato dele e devolve as respostas lado a lado, com alerta de revisão quando a confiança é baixa ou houve recusa.</p>
+  <p class="sub">A ponte traduz as perguntas, chama cada provedor no formato dele e devolve as respostas lado a lado, com alerta de revisêo quando a confiança é baixa ou houve recusa.</p>
   <div class="flow">
     <span>Pergunta no formato Jev</span><span class="arr">→</span>
     <span>ponte converte</span><span class="arr">→</span>
@@ -201,7 +201,7 @@ table.cmp{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 18px}t
 <section id="pre"><div class="wrap">
   <span class="chip">Pré-requisitos</span>
   <h2>Pouca coisa</h2>
-  <p class="sub">A ponte usa só a biblioteca padrão do Python. Chaves só são necessárias no modo ao vivo.</p>
+  <p class="sub">A ponte usa só a biblioteca padrêo do Python. Chaves só sêo necessárias no modo ao vivo.</p>
   <div class="grid g3">
     <div class="card"><h3>Python 3.10+ e Git</h3><p>Nenhuma dependência para instalar.</p><pre><span class="k">git clone</span> <span class="s">https://github.com/linnoff88-dev/decisions-jev.git</span>
 <span class="k">cd</span> decisions-jev</pre></div>
@@ -212,12 +212,12 @@ table.cmp{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 18px}t
 
 <section id="guia"><div class="wrap">
   <span class="chip">Guia de uso · passo a passo</span>
-  <h2>Do exemplo à sua comparação</h2>
+  <h2>Do exemplo à sua comparaçêo</h2>
   <p class="sub">Comece offline. Só chame as APIs quando a pergunta estiver bem formulada.</p>
 
   <div class="step"><div class="b">1</div><div>
-    <h3>Rode a demonstração offline</h3>
-    <p>Três casos fictícios — plantão pet, incidente de checkout e uma recusa — com respostas simuladas. Mostra o formato da comparação, sem chave e sem custo.</p>
+    <h3>Rode a demonstraçêo offline</h3>
+    <p>Três casos fictícios — plantêo pet, incidente de checkout e uma recusa — com respostas simuladas. Mostra o formato da comparaçêo, sem chave e sem custo.</p>
 <pre><span class="k">python3 -m ponte demo</span></pre>
   </div></div>
 
@@ -236,32 +236,32 @@ table.cmp{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 18px}t
 
   <div class="step"><div class="b">4</div><div>
     <h3>Compare ao vivo (chamada paga)</h3>
-    <p>Chama os dois provedores com a mesma pergunta e mostra respostas, latência e custo. Exige <code>PERMITIR_API=1</code> para não gastar por engano. Este modo ainda não foi executado pelo ARCKHÉ.</p>
+    <p>Chama os dois provedores com a mesma pergunta e mostra respostas, latência e custo. Exige <code>PERMITIR_API=1</code> para nêo gastar por engano. Este modo ainda nêo foi executado pelo ARCKHÉ.</p>
 <pre><span class="k">PERMITIR_API=1 python3 -m ponte ao-vivo</span> exemplos/plantao-pet.jev.json</pre>
   </div></div>
 
   <div class="step"><div class="b">5</div><div>
     <h3>Peça ao seu agente para integrar</h3>
-    <p>O prompt pronto manda o agente ler a documentação oficial em Markdown antes de codar, fazer as perguntas numa única chamada, marcar confiança abaixo de 0,6 como "revisar" e tratar a recusa sem quebrar.</p>
+    <p>O prompt pronto manda o agente ler a documentaçêo oficial em Markdown antes de codar, fazer as perguntas numa única chamada, marcar confiança abaixo de 0,6 como "revisar" e tratar a recusa sem quebrar.</p>
 <pre><span class="c"># copie o bloco de texto de</span>
 docs/prompt-integracao.md</pre>
   </div></div>
 
   <div class="step"><div class="b">6</div><div>
     <h3>Confira com os testes</h3>
-    <p>12 testes cobrem conversão nos dois sentidos, ida e volta, imagem, recusa, revisão e o bloqueio do modo ao vivo.</p>
+    <p>12 testes cobrem conversêo nos dois sentidos, ida e volta, imagem, recusa, revisêo e o bloqueio do modo ao vivo.</p>
 <pre><span class="k">python3 -m unittest discover -s testes</span></pre>
   </div></div>
 </div></section>
 
 <section id="escolher"><div class="wrap">
   <span class="chip">Qual usar</span>
-  <h2>Escolha pelo seu caso, não pela manchete</h2>
-  <p class="sub">Para uma pessoa esperando, alguns milissegundos não fazem diferença. Pesam a entrada, o volume e o que fazer com a dúvida.</p>
+  <h2>Escolha pelo seu caso, nêo pela manchete</h2>
+  <p class="sub">Para uma pessoa esperando, alguns milissegundos nêo fazem diferença. Pesam a entrada, o volume e o que fazer com a dúvida.</p>
   <div class="grid g3">
     <div class="card"><h3>📷 Tem imagem?</h3><p>Decisions API. Foto de produto, de ferimento ou print entram na mesma chamada. O Jev ainda só lê texto.</p></div>
     <div class="card"><h3>📈 Muito volume, só texto?</h3><p>Jev. O preço de entrada é menos da metade; em milhões de registros, a diferença aparece na conta.</p></div>
-    <div class="card"><h3>🛑 Tema sensível?</h3><p>A OpenAI pode recusar com <code>refusal</code>. No Jev, inclua uma opção "insuficiente". Nos dois, recusa ou confiança baixa vai para uma pessoa.</p></div>
+    <div class="card"><h3>🛑 Tema sensível?</h3><p>A OpenAI pode recusar com <code>refusal</code>. No Jev, inclua uma opçêo "insuficiente". Nos dois, recusa ou confiança baixa vai para uma pessoa.</p></div>
   </div>
 </div></section>
 
@@ -269,14 +269,14 @@ docs/prompt-integracao.md</pre>
   <span class="chip">Roadmap</span>
   <h2>Próximos passos</h2>
   <p class="sub">O que já existe e o que falta medir.</p>
-  <div class="phase"><div class="tag">v1.0</div><div class="d"><strong>Ponte, comparação e demo</strong><span>Conversão nos dois sentidos, normalização, política de revisão, 3 casos simulados, 12 testes, guia em PT/EN/ES.</span></div></div>
-  <div class="phase"><div class="tag">Próximo</div><div class="d"><strong>Comparação medida pelo ARCKHÉ</strong><span>Rodar o modo ao vivo num conjunto próprio em português, com referência humana, medindo acerto, calibração, custo e latência — depende de autorização para usar as duas APIs.</span></div></div>
+  <div class="phase"><div class="tag">v1.0</div><div class="d"><strong>Ponte, comparaçêo e demo</strong><span>Conversêo nos dois sentidos, normalizaçêo, política de revisêo, 3 casos simulados, 12 testes, guia em PT/EN/ES.</span></div></div>
+  <div class="phase"><div class="tag">Próximo</div><div class="d"><strong>Comparaçêo medida pelo ARCKHÉ</strong><span>Rodar o modo ao vivo num conjunto próprio em português, com referência humana, medindo acerto, calibraçêo, custo e latência — depende de autorizaçêo para usar as duas APIs.</span></div></div>
   <div class="phase"><div class="tag">Depois</div><div class="d"><strong>Ponte no Jev Decision Lab</strong><span>Levar o provedor OpenAI para o laboratório e os pacotes do projeto jev, ao lado do OpenRouter e da TypeSafe.</span></div></div>
 </div></section>
 
 <footer>
   <div class="wrap">
-    <div class="pill">Python (biblioteca padrão)</div><div class="pill">OpenAI Decisions API</div><div class="pill">Jev · OpenRouter</div>
+    <div class="pill">Python (biblioteca padrêo)</div><div class="pill">OpenAI Decisions API</div><div class="pill">Jev · OpenRouter</div>
     <p style="margin-top:18px">Decisions × Jev · projeto educacional independente; Jev é um modelo da TypeSafe e Decisions API é um produto da OpenAI ·
       <a href="https://github.com/linnoff88-dev/decisions-jev">linnoff88-dev/decisions-jev</a> ·
       <a href="https://eventos.ARCKHÉ.pro/jev/">Área JEV</a> ·
